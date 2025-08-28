@@ -26,7 +26,7 @@ export default async function Image() {
           overflow: "hidden",
         }}
       >
-        {/* Background gradient with Farcaster purple and electric blue */}
+        {/* Background gradient optimized for Ten-k branding */}
         <div
           style={{
             position: "absolute",
@@ -34,8 +34,8 @@ export default async function Image() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: "linear-gradient(135deg, #8A63D2 0%, #1E90FF 100%)",
-            opacity: 0.9,
+            background: "linear-gradient(135deg, #7C65C1 0%, #5B47A1 50%, #3F2E7A 100%)",
+            opacity: 0.95,
           }}
         />
 
@@ -48,7 +48,7 @@ export default async function Image() {
             right: 0,
             bottom: 0,
             backgroundImage:
-              "radial-gradient(circle at 20% 80%, rgba(138, 99, 210, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30, 144, 255, 0.4) 0%, transparent 50%)",
+              "radial-gradient(circle at 25% 75%, rgba(124, 101, 193, 0.5) 0%, transparent 60%), radial-gradient(circle at 75% 25%, rgba(91, 71, 161, 0.5) 0%, transparent 60%)",
           }}
         />
 
