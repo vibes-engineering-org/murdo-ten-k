@@ -1,33 +1,26 @@
-import { PROJECT_TITLE } from "~/lib/constants";
+import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const appUrl =
-    process.env.NEXT_PUBLIC_URL ||
-    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-
-  const config = {
+  const appUrl = process.env.NEXT_PUBLIC_URL || 'https://example.com'
+  
+  return NextResponse.json({
     accountAssociation: {
-      header:
-        "eyJmaWQiOjEzNTk2LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4ODE3MzE4RDZmRkY2NkExOGQ4M0ExMzc2QTc2RjZlMzBCNDNjODg4OSJ9",
-      payload:
-        "eyJkb21haW4iOiJmYXJjYXN0ZXItbWluaWFwcC10ZW1wbGF0ZS52ZXJjZWwuYXBwIn0",
-      signature:
-        "MHg5ZjkyZTdkNjRmZTNhNTE4YTEzOTBmZTdlYzAwOWQzODUzZWM2N2RmOTZiYjg1MzAwOGRlZDExNjVmOGE5OGVlNDQyYmI0MDU3OTI0ZmEzOGE3N2NlYWRiYThiMTRiN2IzMTY5N2ZjYWVlZGM3MTE1YWNiMTFmYjc2Y2EzYTc0YzFj",
+      header: 'eyJmaWQiOjg2OTk5OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDc2ZDUwQjBFMTQ3OWE5QmEyYkQ5MzVGMUU5YTI3QzBjNjQ5QzhDMTIifQ',
+      payload: 'eyJkb21haW4iOiJtdXJkby10ZW4tay52ZXJjZWwuYXBwIn0',
+      signature: 'MHgwNDdmNDhmODZhZTE1MDYyOTkwNDY4OTI4YmFiMWVmZTVmOGU1ZDYzNjRlMzVmYTc5NTJhMzI5YmE2ODk5MjNhMGUyMWNkOWE1Nzk5ZTUzNmYwZjM5MzBiNGYyZDVkMDI4NjUzMWY2ODA5NTllMmIwYmEwNmU4MTU0OTdmZDQ5YTFj'
     },
-    miniapp: {
-      version: "1",
-      name: PROJECT_TITLE,
+    frame: {
+      version: '1',
+      name: 'Ten-K Cast Trending',
       iconUrl: `${appUrl}/icon.png`,
       homeUrl: appUrl,
-      imageUrl: `${appUrl}/frames/hello/opengraph-image`,
-      ogImageUrl: `${appUrl}/frames/hello/opengraph-image`,
-      buttonTitle: "Open",
-      splashImageUrl: `${appUrl}/splash.png`,
-      splashBackgroundColor: "#f7f7f7",
+      imageUrl: `${appUrl}/og.png`,
+      buttonTitle: 'Open',
       webhookUrl: `${appUrl}/api/webhook`,
-      primaryCategory: "social",
-    },
-  };
-
-  return Response.json(config);
+      splashImageUrl: `${appUrl}/splash.png`,
+      splashBackgroundColor: '#555555',
+      primaryCategory: 'social',
+      tags: ['farcaster', 'trending', 'posts', 'social', 'feed']
+    }
+  })
 }
